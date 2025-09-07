@@ -26,6 +26,7 @@ public class WebSecurityConfig {
                 .authorizeHttpRequests(
                         request -> request
                                 .requestMatchers("/health/healthChecker").permitAll()
+                                .requestMatchers("/actuator/prometheus/**").permitAll()
                                 .requestMatchers("/api/kcs/v1/auth/user/token").permitAll()
                                 .requestMatchers("/api/kcs/v1/auth/user/token/validate").permitAll()
                                 .anyRequest().authenticated()
